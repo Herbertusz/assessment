@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <title>Digital Natives</title>
-    <script src="js/test.js"></script>
-    <!--
-    <script type="module">
-        import Numeral from './js/numeral.js';
-    </script>
-    -->
-</head>
-<body>
+    <head>
+        <meta charset="utf-8" />
+        <title>Digital Natives</title>
+        <script type="module">
+            import Form from './js/form.js';
+            Form.init();
+        </script>
+    </head>
+    <body>
 
-    Index
+        <section>
+            <h1>Convert number to english text</h1>
+            <div class="form">
+                <input type="number" name="number" value="" placeholder="Type a number" />
+                <button type="button" name="submit">Convert</button>
+            </div>
+            <p id="output"></p>
+        </section>
 
-</body>
+    </body>
 </html>
