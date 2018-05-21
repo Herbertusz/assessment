@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Digital Natives</title>
+        <link rel="stylesheet" href="css/style.css" />
         <script type="module">
             import Form from './js/form.js';
             Form.init();
@@ -13,7 +14,7 @@
         <section>
             <h1>Convert number to english text</h1>
             <div class="form">
-                <input type="number" name="number" value="" placeholder="Type a number" />
+                <input type="number" name="number" value="" placeholder="Type a number" autocomplete="off" />
                 <button type="button" name="submit">Convert</button>
             </div>
             <p id="output"></p>
