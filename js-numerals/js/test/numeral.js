@@ -1,9 +1,15 @@
 /* global describe it */
 
 const assert = require('assert');
-const {numberPartToString, numberToString} = require('../numeral.js');
+const {reverseString, numberPartToString, numberToString} = require('../numeral.js');
 
 describe('Numeral', function(){
+
+    describe('reverseString', function(){
+        it('',       () => { assert.equal(reverseString(''),       ''); });
+        it('012345', () => { assert.equal(reverseString('012345'), '543210'); });
+        it('abcdef', () => { assert.equal(reverseString('abcdef'), 'fedcba'); });
+    });
 
     describe('numberPartToString', function(){
 

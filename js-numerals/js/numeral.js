@@ -1,3 +1,7 @@
+/**
+ * Number conversion algorithm
+ * @type {Object}
+ */
 const Numeral = {
 
     /**
@@ -71,7 +75,11 @@ const Numeral = {
         let numberNames, reverseChunks;
         const nameArray = [];
         const num = Number(numStr);
-        if (num > 1000 && num < 2000){
+        if (num === 0){
+            // handle 0
+            return 'zero';
+        }
+        else if (num > 1000 && num < 2000){
             // handle this exceptional case
             numberNames = ['', 'hundred'];
             reverseChunks = Numeral.reverseString(numStr).match(/.{1,2}/g).map(chunk => Numeral.reverseString(chunk));
@@ -89,9 +97,11 @@ const Numeral = {
             numberNames = Numeral.numberNotations;
             reverseChunks = Numeral.reverseString(numStr).match(/.{1,3}/g).map(chunk => Numeral.reverseString(chunk));
             if (reverseChunks.length > numberNames.length){
+                // too large number, there is no defined notation
                 return Numeral.shouldExpandMessage;
             }
             else {
+                // number name can be desplayed with the defined notations
                 reverseChunks.forEach((chunk, index) => {
                     let part = Numeral.numberPartToString(chunk) &&
                         `${Numeral.numberPartToString(chunk)} ${numberNames[index]}`;
@@ -107,5 +117,5 @@ const Numeral = {
 
 };
 
-// module.exports = Numeral;
+// module.exports = Numeral;  // for testing
 export default Numeral;
